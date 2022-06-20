@@ -445,7 +445,7 @@ async def settings(client, message):
                 ),
             ],
             [
-                InlineKeyboardButton('AutoFilter',
+                InlineKeyboardButton('AFonoff',
                       callback_data=f'setgs#AFonoff#{settings["AFonoff"]}#{str(grp_id)}'),
                 InlineKeyboardButton('✅ ON' if settings["AFonoff"] else '❌ OFF',
                       callback_data=f'setgs#AFonoff#{settings["AFonoff"]}#{str(grp_id)}')
