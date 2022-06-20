@@ -701,12 +701,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
                                          callback_data=f'setgs#button#{settings["button"]}#{str(grp_id)}')
                 ],
                 [
-                    InlineKeyboardButton('AutoFilter',
-                                         callback_data=f'setgs#AFonoff#{settings["AFonoff"]}#{str(grp_id)}'),
-                    InlineKeyboardButton('✅ ON' if settings["AFonoff"] else '❌ OFF',
-                                         callback_data=f'setgs#AFonoff#{settings["AFonoff"]}#{str(grp_id)}')
-                ],
-                [
                     InlineKeyboardButton('Bot PM', callback_data=f'setgs#botpm#{settings["botpm"]}#{str(grp_id)}'),
                     InlineKeyboardButton('✅ Yes' if settings["botpm"] else '❌ No',
                                          callback_data=f'setgs#botpm#{settings["botpm"]}#{str(grp_id)}')
