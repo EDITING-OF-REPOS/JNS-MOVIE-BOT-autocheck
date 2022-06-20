@@ -701,6 +701,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
                                          callback_data=f'setgs#button#{settings["button"]}#{str(grp_id)}')
                 ],
                 [
+                    InlineKeyboardButton('AutoFilter',
+                                         callback_data=f'setgs#AFonoff#{settings["AFonoff"]}#{str(grp_id)}'),
+                    InlineKeyboardButton('✅ ON' if settings["AFonoff"] else '❌ OFF',
+                                         callback_data=f'setgs#AFonoff#{settings["AFonoff"]}#{str(grp_id)}')
+                ],
+                [
                     InlineKeyboardButton('Bot PM', callback_data=f'setgs#botpm#{settings["botpm"]}#{str(grp_id)}'),
                     InlineKeyboardButton('✅ Yes' if settings["botpm"] else '❌ No',
                                          callback_data=f'setgs#botpm#{settings["botpm"]}#{str(grp_id)}')
@@ -755,6 +761,8 @@ async def auto_filter(client, msg, spoll=False):
         message = msg.message.reply_to_message  # msg will be callback query
         search, files, offset, total_results = spoll
     pre = 'filep' if settings['file_secure'] else 'file'
+    
+    
     if settings["button"]:
         btn = [
             [
